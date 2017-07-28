@@ -28,6 +28,8 @@ export class AppComponent {
         {id: 3, name: 'course3'}
     ];
 
+    heroes;
+
     onFavoriteChanged(event: FavoriteChangedEvent) {
         console.log('Favorite changed! Is favorite: ' + event.isFavorite);
     }
@@ -37,7 +39,7 @@ export class AppComponent {
     }
 
     onListAdd() {
-        this.listOfCourses.push({ id: 4, name: 'course4'});
+        this.listOfCourses.push({id: 4, name: 'course4'});
     }
 
     onListRemove(course) {
@@ -47,5 +49,17 @@ export class AppComponent {
 
     onListUpdate(course) {
         course.name = 'UPDATED!';
+    }
+
+    loadHeroes() {
+        this.heroes = [
+            {id: 1, name: 'spongebob'},
+            {id: 2, name: 'patrick'},
+            {id: 3, name: 'thaddeus'}
+        ];
+    }
+
+    trackHero(index, hero) {
+        return hero ? hero.id : undefined;
     }
 }

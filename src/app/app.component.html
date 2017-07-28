@@ -85,9 +85,27 @@
         <ul>
             <li *ngFor="let course of listOfCourses; index as i; even as isEven;">
                 {{ i }} - {{ course.name }}
-                <button (click)="onListRemove(course)">Remove</button>
-                <button (click)="onListUpdate(course)">Update</button>
-                <span *ngIf="isEven">(EVEN)</span>
+                <button class="btn btn-danger" (click)="onListRemove(course)">Remove</button>
+                <button class="btn btn-info" (click)="onListUpdate(course)">Update</button>
+                <span class="label label-default" *ngIf="isEven">(EVEN)</span>
+            </li>
+        </ul>
+
+    </ng-container>
+</app-panel>
+
+<app-panel>
+    <ng-container class="heading">trackBy Testing</ng-container>
+    <ng-container class="body">
+        <button class="btn btn-primary" (click)="loadHeroes()">Load Heroes</button>
+        <ul>
+            <!--
+                "trackBy" is used so that angular can detect if the list changed!
+                if we wouldn't use it, the list will be updated every time we click the button.
+                this might be expensive on huge lists, so we implemented the tracking function.
+             -->
+            <li *ngFor="let hero of heroes; trackBy: trackHero">
+                {{ hero.name }}
             </li>
         </ul>
 
