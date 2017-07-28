@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FavoriteChangedEvent } from './favorite/favorite.component';
 
 @Component({
     selector: 'app-root',
@@ -11,7 +12,7 @@ export class AppComponent {
         isFavorite: true
     };
 
-    onFavoriteChanged(isFavorite: object) {
-        console.log('Favorite changed! Is favorite: ' + isFavorite);
+    onFavoriteChanged(event: FavoriteChangedEvent) {
+        console.log('Favorite changed! Is favorite: ' + event.isFavorite);
     }
 }
