@@ -9,6 +9,7 @@ import { SummaryPipe } from './summary.pipe';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { TitlecaseComponent } from './titlecase/titlecase.component';
 import { TitlecaseCustomPipe } from './titlecase-custom.pipe';
+import { PanelComponent } from './panel/panel.component';
 
 @NgModule({
     declarations: [
@@ -17,7 +18,8 @@ import { TitlecaseCustomPipe } from './titlecase-custom.pipe';
         SummaryPipe,
         FavoriteComponent,
         TitlecaseComponent,
-        TitlecaseCustomPipe
+        TitlecaseCustomPipe,
+        PanelComponent
     ],
     imports: [
         BrowserModule,

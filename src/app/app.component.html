@@ -1,4 +1,15 @@
 <h1>Angular</h1>
+
 <app-course></app-course>
+
 <app-favorite [isFavorite]="post.isFavorite" (change)="onFavoriteChanged($event)"></app-favorite>
+
 <app-titlecase></app-titlecase>
+
+<app-panel>
+    <ng-container class="heading">Heading</ng-container>
+    <div class="body">
+        <h2>Body</h2>
+        <p>Some cool content...</p>
+    </div>
+</app-panel>
