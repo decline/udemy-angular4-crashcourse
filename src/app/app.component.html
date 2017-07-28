@@ -1,32 +1,57 @@
 <h1>Angular</h1>
 
-<app-course></app-course>
-
-<app-favorite [isFavorite]="post.isFavorite" (change)="onFavoriteChanged($event)"></app-favorite>
-
-<app-titlecase></app-titlecase>
+<app-panel>
+    <ng-container class="heading">Course Component</ng-container>
+    <ng-container class="body">
+        <app-course></app-course>
+    </ng-container>
+</app-panel>
 
 <app-panel>
-    <ng-container class="heading">Heading</ng-container>
+    <ng-container class="heading">Favorite Component</ng-container>
+    <ng-container class="body">
+        <app-favorite [isFavorite]="post.isFavorite" (change)="onFavoriteChanged($event)"></app-favorite>
+    </ng-container>
+</app-panel>
+
+<app-panel>
+    <ng-container class="heading">Titlecase Component</ng-container>
+    <ng-container class="body">
+        <app-titlecase></app-titlecase>
+    </ng-container>
+</app-panel>
+
+<app-panel>
+    <ng-container class="heading">Panel Component</ng-container>
     <div class="body">
         <h2>Body</h2>
         <p>Some cool content...</p>
     </div>
 </app-panel>
 
-<app-like [count]="tweet.currentCount" [userLiked]="tweet.userLiked" (clicked)="onTweetLiked($event)"></app-like>
+<app-panel>
+    <ng-container class="heading">Like Component</ng-container>
+    <ng-container class="body">
+        <app-like [count]="tweet.currentCount" [userLiked]="tweet.userLiked" (clicked)="onTweetLiked($event)"></app-like>
+    </ng-container>
+</app-panel>
 
-<div *ngIf="tweet.userLiked; then tweetLiked else tweetNotLiked"></div>
-<ng-template #tweetLiked>
-    The user liked it :)
-</ng-template>
-<ng-template #tweetNotLiked>
-    The user did not like it :(
-</ng-template>
+<app-panel>
+    <ng-container class="heading">ngIf & hidden Testing</ng-container>
+    <ng-container class="body">
+        <div *ngIf="tweet.userLiked; then tweetLiked else tweetNotLiked"></div>
+        <ng-template #tweetLiked>
+            The user liked it :)
+        </ng-template>
+        <ng-template #tweetNotLiked>
+            The user did not like it :(
+        </ng-template>
 
-<div [hidden]="tweet.currentCount <= 0">
-    Well there are likes at last! :)
-</div>
-<div [hidden]="tweet.currentCount > 0">
-    Nobody likes us :(
-</div>
+        <div [hidden]="tweet.currentCount <= 0">
+            Well there are likes at last! :)
+        </div>
+        <div [hidden]="tweet.currentCount > 0">
+            Nobody likes us :(
+        </div>
+    </ng-container>
+</app-panel>
