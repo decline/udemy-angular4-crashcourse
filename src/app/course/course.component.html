@@ -3,3 +3,17 @@
   <li *ngFor="let course of courses">{{ course }}</li>
 </ul>
 <img [src]="imageUrl"/>
+
+<div>
+    <button class="btn btn-primary" [class.active]="isActive" [style.borderColor]="isActive ? 'red' : 'green'">Active test</button>
+</div>
+
+<div (click)="onDivClicked()">
+    <button (click)="onSave($event)">Save</button>
+</div>
+
+<div>
+    <input (keyup.enter)="onEnterPressed($event)"/>
+    <input #email type="email" (keyup.enter)="onEmailSubmitted(email.value)"/>
+    <input [(ngModel)]="emailAddress" (keyup.enter)="onEmailTyped()"/>
+</div>
