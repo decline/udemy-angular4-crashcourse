@@ -1,0 +1,11 @@
+.like i {
+    color: #ccc;
+}
+
+.like i.active {
+    color: deeppink;
+}
+
+.like i:hover {
+    cursor: pointer;
+}

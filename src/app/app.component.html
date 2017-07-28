@@ -13,3 +13,5 @@
         <p>Some cool content...</p>
     </div>
 </app-panel>
+
+<app-like [count]="tweet.currentCount" [userLiked]="tweet.userLiked" (clicked)="onTweetLiked($event)"></app-like>
