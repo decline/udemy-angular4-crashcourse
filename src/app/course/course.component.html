@@ -1,26 +1,32 @@
-<h2>{{ courses.length }} Courses</h2>
-<ul>
-    <li *ngFor="let course of courses">{{ course }}</li>
-</ul>
-<img [src]="imageUrl"/>
+<div>
+    <h3>{{ courses.length }} Courses</h3>
+    <ul>
+        <li *ngFor="let course of courses">{{ course }}</li>
+    </ul>
+    <img [src]="imageUrl"/>
+</div>
 
 <div>
+    <h3>Property binding</h3>
     <button class="btn btn-primary" [class.active]="isActive" [style.borderColor]="isActive ? 'red' : 'green'">Active
         test
     </button>
 </div>
 
 <div (click)="onDivClicked()">
+    <h3>Click handling</h3>
     <button (click)="onSave($event)">Save</button>
 </div>
 
 <div>
+    <h3>Event handling & Data binding</h3>
     <input (keyup.enter)="onEnterPressed($event)"/>
     <input #email type="email" (keyup.enter)="onEmailSubmitted(email.value)"/>
     <input [(ngModel)]="emailAddress" (keyup.enter)="onEmailTyped()"/>
 </div>
 
 <div>
+    <h3>Pipe Test</h3>
     {{ angularCourse.title | uppercase }} <br/>
     {{ angularCourse.students | number }} <br/>
     {{ angularCourse.rating | number:'1.2-2' }} <br/>
@@ -29,5 +35,6 @@
 </div>
 
 <div>
+    <h3>Custom Pipe Test</h3>
     <span>{{ 'This is a very long text which should be shortened by our new cool summary pipe :)' | summary:20 }}</span>
 </div>

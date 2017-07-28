@@ -18,11 +18,34 @@ export class AppComponent {
         userLiked: false
     };
 
+    listView = {
+        viewMode: 'map'
+    };
+
+    listOfCourses = [
+        {id: 1, name: 'course1'},
+        {id: 2, name: 'course2'},
+        {id: 3, name: 'course3'}
+    ];
+
     onFavoriteChanged(event: FavoriteChangedEvent) {
         console.log('Favorite changed! Is favorite: ' + event.isFavorite);
     }
 
     onTweetLiked(event: TweetLikedEvent) {
         console.log('Tweet was liked: ' + event.wasLiked);
+    }
+
+    onListAdd() {
+        this.listOfCourses.push({ id: 4, name: 'course4'});
+    }
+
+    onListRemove(course) {
+        const index = this.listOfCourses.indexOf(course);
+        this.listOfCourses.splice(index, 1);
+    }
+
+    onListUpdate(course) {
+        course.name = 'UPDATED!';
     }
 }
