@@ -30,6 +30,8 @@ export class AppComponent {
 
     heroes;
 
+    canSave = true;
+
     onFavoriteChanged(event: FavoriteChangedEvent) {
         console.log('Favorite changed! Is favorite: ' + event.isFavorite);
     }
