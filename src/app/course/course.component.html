@@ -17,3 +17,11 @@
     <input #email type="email" (keyup.enter)="onEmailSubmitted(email.value)"/>
     <input [(ngModel)]="emailAddress" (keyup.enter)="onEmailTyped()"/>
 </div>
+
+<div>
+    {{ angularCourse.title | uppercase }} <br/>
+    {{ angularCourse.students | number }} <br/>
+    {{ angularCourse.rating | number:'1.2-2' }} <br/>
+    {{ angularCourse.price }} <br/>
+    {{ angularCourse.releaseDate }} <br/>
+</div>

@@ -12,6 +12,14 @@ export class CourseComponent implements OnInit {
     isActive = true;
     emailAddress = 'me@example.com';
 
+    angularCourse = {
+        title: 'The complete angular course',
+        rating: 4.9745,
+        students: 30123,
+        price: 190.95,
+        releaseDate: new Date(2016, 3, 1)
+    };
+
     constructor(courseService: CourseService) {
         this.courses = courseService.getCourses();
     }
