@@ -7,13 +7,17 @@ import { CourseService } from './course.service';
 import { FormsModule } from '@angular/forms';
 import { SummaryPipe } from './summary.pipe';
 import { FavoriteComponent } from './favorite/favorite.component';
+import { TitlecaseComponent } from './titlecase/titlecase.component';
+import { TitlecaseCustomPipe } from './titlecase-custom.pipe';
 
 @NgModule({
     declarations: [
         AppComponent,
         CourseComponent,
         SummaryPipe,
-        FavoriteComponent
+        FavoriteComponent,
+        TitlecaseComponent,
+        TitlecaseCustomPipe
     ],
     imports: [
         BrowserModule,
