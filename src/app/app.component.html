@@ -15,3 +15,18 @@
 </app-panel>
 
 <app-like [count]="tweet.currentCount" [userLiked]="tweet.userLiked" (clicked)="onTweetLiked($event)"></app-like>
+
+<div *ngIf="tweet.userLiked; then tweetLiked else tweetNotLiked"></div>
+<ng-template #tweetLiked>
+    The user liked it :)
+</ng-template>
+<ng-template #tweetNotLiked>
+    The user did not like it :(
+</ng-template>
+
+<div [hidden]="tweet.currentCount <= 0">
+    Well there are likes at last! :)
+</div>
+<div [hidden]="tweet.currentCount > 0">
+    Nobody likes us :(
+</div>
