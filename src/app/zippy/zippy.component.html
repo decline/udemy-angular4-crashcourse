@@ -1,0 +1,16 @@
+<div class="zippy panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading" (click)="toggle()">
+            {{ title }}
+            <span class="pull-right">
+                <i class="glyphicon" [ngClass]="{
+                    'glyphicon-chevron-up': !collapsed,
+                    'glyphicon-chevron-down': collapsed
+                }"></i>
+            </span>
+        </div>
+        <div class="panel-body" [hidden]="collapsed">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</div>
