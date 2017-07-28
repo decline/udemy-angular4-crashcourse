@@ -126,3 +126,12 @@
 
     </ng-container>
 </app-panel>
+
+<app-panel>
+    <ng-container class="heading">Custom Directive Testing</ng-container>
+    <ng-container class="body">
+        <input type="text" [appInputFormat]="'lowercase'"/>
+        <input type="text" appInputFormat/>
+
+    </ng-container>
+</app-panel>
