@@ -27,3 +27,7 @@
     {{ angularCourse.price | currency:'EUR':true:'3.2-2' }} <br/>
     {{ angularCourse.releaseDate | date:'shortDate' }} <br/>
 </div>
+
+<div>
+    <span>{{ 'This is a very long text which should be shortened by our new cool summary pipe :)' | summary:20 }}</span>
+</div>
