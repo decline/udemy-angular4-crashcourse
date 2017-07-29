@@ -13,4 +13,7 @@ export class CourseFormExcerciseComponent {
         { id: 3, name: 'Languages' }
     ];
 
+    submit(course) {
+        console.log(course);
+    }
 }
