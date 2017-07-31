@@ -17,11 +17,7 @@ export class PostsComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.service.getAll().subscribe(
-            response => {
-                this.posts = response.json();
-            }
-        );
+        this.service.getAll().subscribe(posts => this.posts = posts);
     }
 
     createPost(input: HTMLInputElement): void {
@@ -29,8 +25,8 @@ export class PostsComponent implements OnInit {
         input.value = '';
 
         this.service.create(post).subscribe(
-            response => {
-                post['id'] = response.json().id;
+            newPost => {
+                post['id'] = newPost.id;
                 this.posts.splice(0, 0, post);
             },
             (error: AppError) => {
@@ -45,15 +41,15 @@ export class PostsComponent implements OnInit {
 
     updatePost(post: any): void {
         this.service.update(post, {isRead: true}).subscribe(
-            response => {
-                console.log(response.json());
+            updatedPost => {
+                console.log(updatedPost);
             }
         );
     }
 
     deletePost(post: any): void {
         this.service.delete(post.id).subscribe(
-            (response) => {
+            () => {
                 let index = this.posts.indexOf(post);
                 this.posts.splice(index, 1);
             },
