@@ -22,4 +22,18 @@ export class UsernameValidators {
             };
         }
     }
+
+    static shouldBeUnique(control: AbstractControl): Promise<ValidationErrors | null> {
+        return new Promise((resolve, reject) => {
+            // fake async operation
+            setTimeout(() => {
+                if (control.value === 'dominik') {
+                    resolve({ shouldBeUnique: true });
+                } else {
+                    resolve(null);
+                }
+
+            }, 2000);
+        });
+    }
 }
